@@ -5,12 +5,14 @@ import CategoryItem from "./components/CategoryItems";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import Logo from "./components/Logo"
+import Loader from "./components/Loader";
 
 
 //navBar desde abajo con rutas react router dom y llas rutas pedidass
 function App() {
   return (
     <BrowserRouter>
+    <Loader />
     <NavBar />
     <Logo />
     <Routes>

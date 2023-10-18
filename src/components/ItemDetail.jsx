@@ -12,7 +12,6 @@ const ItemDetail = ({ item }) => {
   const handleAddToCart = (count) => {
     setSelectedItemCount(count);
     setShowItemCount(false);
-    
   };
 
   const handleFinishPurchase = () => {

@@ -6,7 +6,6 @@ import { mockItems } from "./mockItems.js";
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  console.log(mockItems);
 
   useEffect(() => {
     setTimeout(() => {

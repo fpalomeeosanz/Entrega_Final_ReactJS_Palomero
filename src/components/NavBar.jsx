@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return(
-    <nav className="navbar fixed-bottom" style={{ backgroundColor: 'rgba(233, 244, 9 , 0.3)', color: 'white', padding: '10px', marginTop: '10px' }} >
+    <nav className="navbar fixed-bottom" style={{ backgroundColor: 'rgba(233, 244, 9)', padding: '10px', marginTop: '10px' }} >
      <div className="container-fluid">
        <Brand />
        <MenuButton />

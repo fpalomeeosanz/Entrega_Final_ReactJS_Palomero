@@ -7,7 +7,6 @@ import Loader from './Loader';
 const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
   const [loading] = useState(true);
-  console.log(mockItems);
 
   useEffect(() => {
     setItem(mockItems);

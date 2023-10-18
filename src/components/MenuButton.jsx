@@ -1,12 +1,12 @@
 const MenuButton  = () => {
     return(
         <button className="navbar-toggler position-relative" 
-        type="button" 
+        type="button"
         data-bs-toggle="collapse" 
         data-bs-target="#navbarSupportedContent" 
         aria-controls="navbarSupportedContent" 
         aria-expanded="false" 
-        aria-label="Toggle navigation" style={{marginTop: 10}}
+        aria-label="Toggle navigation" style={{marginTop: 10, color: "rgb(0, 123, 255)" }}
         >
         <span className="navbar-toggler-icon "></span>
       </button>

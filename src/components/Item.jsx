@@ -5,8 +5,8 @@ const Item = ({ item, imageUrl }) => {
     <div className="item">
       <img src={imageUrl} alt={item.name} width={500} height={250} />
       <h2>{item.name}</h2>
-      <p>Precio: ${item.price}</p>
-      <p>Descripcion del servicio: {item.text}</p>
+      <p className="price">Precio: ${item.price}</p>
+      <p className="description">Descripcion del servicio: {item.text}</p>
     </div>
   );
 };
