@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
-//se agrega link en reemplazo de a se mantine to #
+
+//se corrije el elemento y se cambian los links "a" para enrutar con metodo link correctamnete en Nabar
 
 const CategoryItems = ({ isActive = false, name }) => {
   return (
-    <Link className={`nav-link ${isActive ? 'active' : ''}`} aria-current="page" to={"#"}>{name}</Link>
+    <div className={`nav-link ${isActive ? 'active' : ''}`}>{name}</div>
   );
 };
 
-
-
 export default CategoryItems;
+

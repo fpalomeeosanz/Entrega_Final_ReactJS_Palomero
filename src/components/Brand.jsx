@@ -2,11 +2,19 @@ import { Link } from "react-router-dom";
 //se añadió el link a brand para ir al home
 
 const Brand = () => {
-    return(
+  return (
+    <div>
+      <Link to={'/'}>
         <div>
-            <Link className="navbar-brand" to={'/'} >La tiendita de Cáceres</Link>
+          <img src="./src/img/LogoLaVozDeCaceresTexto.png" alt="Logo La Voz" style={{
+          maxWidth: '30%',
+          maxHeight: '30%',
+          }} />
         </div>
-    );
+      </Link>
+    </div>
+  );
 };
 
 export default Brand;
+

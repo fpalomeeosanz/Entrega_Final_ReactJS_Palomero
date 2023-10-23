@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { mockItems } from "./mockItems.js";
 
+
 //se crea ItemListContainer para mostra listado
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     setTimeout(() => {

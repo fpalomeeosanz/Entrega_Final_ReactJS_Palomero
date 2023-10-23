@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import ItemCount from './ItemCount';
+
 //se agrega metodoUseHitory y se agrega un pusheo para el carrito al finalizar la compra
 
 const ItemDetail = ({ item }) => {

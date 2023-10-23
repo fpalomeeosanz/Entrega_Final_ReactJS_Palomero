@@ -1,7 +1,8 @@
 import { useState } from 'react';
 //se creaItemcount para seguir la logica de las filminas de la actividad 1...
 
-function ItemCount({ stock, initial = 1, onAdd }) {
+
+function ItemCount({ stock =10, initial = 1, onAdd }) {
   const [count, setCount] = useState(initial);
 
   const increment = () => {
@@ -35,5 +36,6 @@ function ItemCount({ stock, initial = 1, onAdd }) {
 }
 
 export default ItemCount;
+
 
 
