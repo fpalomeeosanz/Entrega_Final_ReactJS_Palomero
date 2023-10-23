@@ -13,8 +13,20 @@ p{
 h2{
   color: antiquewhite;
 }
-button{
-  border-radius: 100;
+.ver-detalles{
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 200px;
+  margin: 20px;
+  border-radius: 25px; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.ver-detalles:hover{
+  background-color: #0396a3;
 }
 span{
   text-align: center;

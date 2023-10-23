@@ -3,14 +3,12 @@ import CartItems from './CartItems';
 import ItemDetailContainer from './ItemDetailContainer';
 import CartIcon from './CartIcon';
 
-//me falta agregar lógica para agregar elementos al carrito aquí y actualizar el estado del carrito y el contador aquí.
+//se grega lógica para agregar elementos al carrito aquí y actualizar el estado del carrito y el contador aquí.
 
 function CartContainer() {
   const [cartCount, setCartCount] = useState(0);
 
   const addToCart = (count) => {
-    //
-
     setCartCount(cartCount + count);
   };
 
