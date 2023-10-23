@@ -80,20 +80,6 @@ span{
 .remove-item-button:hover {
   text-decoration: underline;
 }
-.button {
-  display: inline-block;
-  background-color: #FFD700;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px; 
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-.button:hover {
-  background-color: #a38b03; 
-}
 .item {
   background-color: rgba(255, 255, 255, 0.7); 
   border-radius: 10px; 
@@ -121,27 +107,71 @@ span{
   font-weight: bold;
 }
 .item-list{
-  background-color: #a38b03;
+  background-color: #00b7cf;
   padding: 10px;
+  border-radius: 25px;
 }
 .description{
   font-weight:lighter;
   color: #333; 
   padding: 10px;
+  margin: 10px;
 }
 .price{
   font-weight: bold;
   font-size:x-large;
   color: #333; 
 }
-.mas-servicios{
- position: absolute;
- top: 10px;
- right: 10px;
- background-color: #1c8a7d;
- color: white;
- padding: 5px 10px;
- border: none;
- border-radius: 5px;
- cursor: pointer;
+.inc {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #808080;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 25px; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.dec {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #808080;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 25px; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.add {
+  display: inline-block;
+  background-color: #a6ff00;
+  color: #808080;
+  border: none;
+  padding: 10px 20px ;
+  margin: 20px;
+  border-radius: 25px; 
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.inc:hover {
+  background-color: #5003a3; 
+}
+.dec:hover {
+  background-color: #5003a3; 
+}
+.add:hover {
+  background-color: #0396a3; 
+}
+.tot{
+  background-color: #7a7b7a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px; 
+  font-size: 16px;
 }
