@@ -71,27 +71,14 @@ span{
   padding: 1rem;
   border-bottom: 1px solid #ddd; 
 }
-.cart-item img {
-  width: 5rem;
-  height: 5rem;
-  margin-right: 1rem;
-}
-.cart-item-info {
-  flex: 1;
-}
+
 .cart-item-title {
   font-weight: bold;
 }
 .cart-item-price {
   color: #007bff;
 }
-.remove-item-button {
-  color: #ff5733;
-  cursor: pointer;
-}
-.remove-item-button:hover {
-  text-decoration: underline;
-}
+
 .item {
   background-color: rgba(255, 255, 255, 0.7); 
   border-radius: 10px; 

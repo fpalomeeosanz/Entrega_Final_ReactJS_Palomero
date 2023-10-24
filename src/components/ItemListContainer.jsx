@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { mockItems } from "./mockItems.js";
+import Loader from './Loader';
 
 
 //se crea ItemListContainer para mostra listado
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,7 +20,7 @@ const ItemListContainer = () => {
   return (
     <div className="item-list-container">
       {loading ? (
-        <p>Estamos procesando tu solicitud...</p>
+        <Loader />
       ) : (
         <ItemList items={items} />
       )}

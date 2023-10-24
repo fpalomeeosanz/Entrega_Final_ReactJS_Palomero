@@ -8,7 +8,7 @@ const ItemDetail = ({ item }) => {
   const history = useHistory();
   const [showItemCount, setShowItemCount] = useState(true);
   const [selectedItemCount, setSelectedItemCount] = useState(0);
-  const [cartItems, setCartItems] = useState([]); // Estado para almacenar los elementos del carrito
+  const [cartItems, setCartItems] = useState([]); 
 
   const handleAddToCart = (count) => {
     setSelectedItemCount(count);

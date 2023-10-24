@@ -1,13 +1,12 @@
 import Brand from "./Brand";
 import MenuButton from "./MenuButton";
 import CategoryItems from "./CategoryItems";
-import CartContainer from "./CartContainer";
 import { Link } from "react-router-dom";
 //se incluye metodo Link para rutear el navBar
 
 const NavBar = () => {
   return (
-    <nav className="navbar fixed-bottom">
+    <nav className="navbar fixed-bottom position relative">
       <div className="container-fluid justify-content-end">
         <MenuButton />
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,7 +38,6 @@ const NavBar = () => {
               </Link>
             </li>
           </ul>
-          <CartContainer />
         </div>
       </div>
     </nav>

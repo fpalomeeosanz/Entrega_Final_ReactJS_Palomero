@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom';
 import ItemCount from "./ItemCount";
 
-//se agrega la función handleAddToCart y se consologuean los elementos 
-
 const Item = ({ item, imageUrl }) => {
-  
   const handleAddToCart = (count) => {
-    
     console.log(`Agregados ${count} elementos al carrito`);
   };
 
   return (
     <div className="item">
-      <img src={imageUrl} alt={item.name} width={500} height={250} />
+      {imageUrl && imageUrl.trim() !== '' ? (<img src={imageUrl} alt={item.name} width={500} height={250} />
+      ) : (
+        <div>Esta imagen es de otra web y parece que no está :/ </div> 
+      )}
       <h2>{item.name}</h2>
       <p className="price">Precio: ${item.price}</p>
       <ItemCount stock={100} onAdd={handleAddToCart} />
@@ -21,6 +20,4 @@ const Item = ({ item, imageUrl }) => {
   );
 };
 
-export default Item;
-
-
+export default Item

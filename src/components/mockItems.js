@@ -1,3 +1,4 @@
+
 //construccion de array para elementos a mostrar en la app
 
 export const mockItems = [

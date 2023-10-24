@@ -6,7 +6,7 @@ const Brand = () => {
     <div>
       <Link to={'/'}>
         <div>
-          <img src="./src/img/LogoLaVozDeCaceresTexto.png" alt="Logo La Voz" style={{
+          <img src="/src/img/LogoLaVozDeCaceresTexto.png" alt="Logo La Voz" style={{
           maxWidth: '30%',
           maxHeight: '30%',
           }} />

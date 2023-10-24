@@ -3,16 +3,27 @@ import { mockItems } from './mockItems';
 import Item from './Item';
 import Loader from './Loader';
 import ItemCount from './ItemCount';
+import { useParams } from 'react-router-dom';
 
 //se importa la promesa simulada y se cera stado para almacenar el elemento, se carga el Loader y se inserta y se carga el componente ItemCount y pasa addToCart como prop
 
 const ItemDetailContainer = ({ addToCart }) => { 
-  const [item, setItem] = useState([]);
-  const [loading] = useState(true);
 
+  const { id } = useParams( ); 
+  const [item, setItem] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
-    setItem(mockItems);
-  }, []);
+
+    const selectedItem = mockItems.find((product) => product.id === parseInt(id));
+
+    if (selectedItem) {
+      setItem(selectedItem);
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
+  }, [id]);
 
   return (
     <div className="item-detail-container">
@@ -20,7 +31,7 @@ const ItemDetailContainer = ({ addToCart }) => {
         <Loader />
       ) : item ? (
         <div>
-          <Item item={item} />
+          <Item item={item} imageUrl={item.imageUrl} />
           <ItemCount stock={item.stock} onAdd={addToCart} />
         </div>
       ) : (
