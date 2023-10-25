@@ -22,6 +22,7 @@ h2 {
 
 /* Botones */
 .boton-ver-mas,
+.buy-btn,
 .ver-detalles, 
 .inc,
 .dec,
@@ -262,3 +263,4 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0056b3;
 }
+

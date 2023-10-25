@@ -36,6 +36,3 @@ function ItemCount({ stock =100, initial = 1, onAdd }) {
 }
 
 export default ItemCount;
-
-
-

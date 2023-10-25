@@ -2,6 +2,7 @@ import Brand from "./Brand";
 import MenuButton from "./MenuButton";
 import CategoryItems from "./CategoryItems";
 import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon"
 //se incluye metodo Link para rutear el navBar
 
 const NavBar = () => {
@@ -9,7 +10,8 @@ const NavBar = () => {
   const containerStyle = {
     backgroundColor: 'rgba(155, 55, 255, 0.7)', 
     padding: '10px',
-    borderRadius: '25px', 
+    borderRadius: '25px',
+    boxShadow: '10px rgba(0, 0, 0, 0.7)', 
   };
 
   return (
@@ -18,7 +20,10 @@ const NavBar = () => {
         <MenuButton />
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <Brand />
+            <Brand /> 
+            <Link to="/cart">
+              <CartIcon />
+            </Link>
             <li className="nav-item">
               <Link to="/category/ads">
                 <CategoryItems isActive={false} name="Ads" />
