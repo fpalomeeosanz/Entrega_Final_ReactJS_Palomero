@@ -14,7 +14,7 @@ function CartContainer() {
   };
 
   return (
-    <div className="bg-info rounded p-3 position relative">
+    <div className="bg-info rounded p-3 positi relative">
       <Brand />
       <CartIcon />
       <CartItems count={cartCount} />

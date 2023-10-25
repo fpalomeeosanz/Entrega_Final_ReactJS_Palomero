@@ -10,7 +10,7 @@ const Item = ({ item, imageUrl }) => {
     <div className="item">
       {imageUrl && imageUrl.trim() !== '' ? (<img src={imageUrl} alt={item.name} width={500} height={250} />
       ) : (
-        <div>Esta imagen es de otra web y parece que no está :/ </div> 
+        <div>La imagen nada la voz es todo! </div> 
       )}
       <h2>{item.name}</h2>
       <p className="price">Precio: ${item.price}</p>
