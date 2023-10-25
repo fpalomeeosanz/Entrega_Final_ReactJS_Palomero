@@ -3,7 +3,8 @@ import MenuButton from "./MenuButton";
 import CategoryItems from "./CategoryItems";
 import { Link } from "react-router-dom";
 import CartIcon from "./CartIcon"
-//se incluye metodo Link para rutear el navBar
+
+//se incluye metodo Link para rutear el navBar y se pasan estilos por prompt y se generan ruteos correctos 
 
 const NavBar = () => {
 

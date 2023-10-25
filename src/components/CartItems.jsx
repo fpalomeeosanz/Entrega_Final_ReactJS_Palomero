@@ -1,13 +1,11 @@
-import { Link } from 'react-router-dom';
+//se acotó el codigo
 
-//se modificoó para importr link
-
-const CategoryItems = ({ isActive = false, name }) => {
-  return (
-    <Link to={`/category/${name}`} className={`nav-link ${isActive ? 'active' : ''}`}>
-      {name}
-    </Link>
-  );
-};
-
-export default CategoryItems;
+function CartItems({ count }) {
+    return (
+      <div className="position-absolute bg-warning rounded-circle px-2" style={{ top: 15, right: 15 }}>
+        <span>{count}</span>
+      </div>
+    );
+  }
+  
+export default CartItems

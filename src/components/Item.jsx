@@ -2,17 +2,19 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from "./ItemCount";
 
+//se crea logica para copiar elementos selecionandos y pusharlos, pero estan en consolelog aun
+
 const Item = ({ item, imageUrl }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const handleAddToCart = (count) => {
-    // Crear una copia de los elementos en el carrito
+   
     const updatedCartItems = [...cartItems];
 
-    // Agregar el elemento actual al carrito con la cantidad seleccionada
+    
     updatedCartItems.push({ ...item, quantity: count });
 
-    // Actualizar el estado del carrito
+   
     setCartItems(updatedCartItems);
 
     console.log(`${count} elementos de "${item.name}" se han agregado al carrito.`);

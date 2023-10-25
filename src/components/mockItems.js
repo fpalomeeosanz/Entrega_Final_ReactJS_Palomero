@@ -1,5 +1,5 @@
 
-//construccion de array para elementos a mostrar en la app
+//se completa el array de elementos y categoryas para selecion y filtrado desde el navBar depues
 
 export const mockItems = [
   { id: 1, name: 'FRASE PUBLICITARIA', price: 200000, text: 'Utilizando una intención promocional que pone en alerta al oyente y lo estimula a prestar atención al producto con una voz enérgica y agradable que invade con alegría.', imageUrl: 'https://lavozdecaceres.cl/wp-content/uploads/2019/08/caceres-Bio-izq.jpg',category: 'Voice' },

@@ -5,24 +5,23 @@ import CartIcon from './CartIcon';
 import Brand from './Brand';
 import ItemDetail from './ItemDetail';
 
+
+//cambios de logica filtrado para ver si existen elementos y dar una descripcion y numero de elemetos en el carrito
+
 function CartContainer() {
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
 
   const addToCart = (item, count) => {
-    // Verificar si el artículo ya está en el carrito
+
     const existingItem = cart.find((cartItem) => cartItem.item.id === item.id);
 
     if (existingItem) {
-      // Actualizar la cantidad si el artículo ya existe
       existingItem.count += count;
     } else {
-      // Agregar el artículo al carrito si es nuevo
       const newItem = { item, count };
       setCart([...cart, newItem]);
     }
-
-    // Actualizar el recuento total del carrito
     setCartCount(cartCount + count);
   };
 

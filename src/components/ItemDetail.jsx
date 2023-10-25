@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemCount from './ItemCount';
-//se agrega metodoUseHitory y se agrega un pusheo para el carrito al finalizar la compra
 
-const ItemDetail = ({ item }) => {
+//se agrega metodo "navigate" y se agrega un pusheo para el carrito al finalizar la compra pero aun sin funcionar
+
+const ItemDetail = () => {
 
   const navigate = useNavigate();
   const [showItemCount, setShowItemCount] = useState(true);
@@ -22,7 +23,7 @@ const ItemDetail = ({ item }) => {
   return (
     <div className="item-detail">
       {showItemCount ? (
-        <ItemCount stock={item.stock} initial={1} onAdd={handleAddToCart} />
+        <ItemCount stock={1000} initial={1} onAdd={handleAddToCart} />
       ) : (
         <div>
           <h2>Genial! Haz seleccionado {selectedItemCount} ítem(s).</h2>

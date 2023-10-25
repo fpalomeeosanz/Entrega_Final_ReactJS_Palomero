@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+//aun me falta pusharlo algun lado o setiarlo 
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,7 +19,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //aun me falta pusharlo algun lado o setiarlo
+    
     console.log('Datos del formulario:', formData);
   };
 

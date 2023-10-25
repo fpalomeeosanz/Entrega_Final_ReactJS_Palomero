@@ -1,5 +1,7 @@
 import { useState } from 'react';
-//se creaItemcount para seguir la logica de las filminas de la actividad 1...
+
+
+//se modifica la logica para el contador y se agrega como elmento
 
 
 function ItemCount({ stock =100, initial = 1, onAdd }) {

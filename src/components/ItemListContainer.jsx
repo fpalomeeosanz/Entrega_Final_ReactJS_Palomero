@@ -3,8 +3,8 @@ import ItemList from './ItemList';
 import { mockItems } from "./mockItems.js";
 import Loader from './Loader';
 
-
 //se crea ItemListContainer para mostra listado
+
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);

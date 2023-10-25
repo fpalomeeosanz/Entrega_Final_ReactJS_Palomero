@@ -1,3 +1,5 @@
+//se agregan estilos como prompt al boton
+
 const MenuButton = () => {
   
   const buttonStyle = {
