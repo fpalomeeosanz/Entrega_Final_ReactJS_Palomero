@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Brand from './Brand';
 
 //aun me falta pusharlo algun lado o setiarlo 
 
@@ -27,6 +28,7 @@ const Contact = () => {
     <section className="contact-section">
       <h2>Contacto</h2>
       <p>¿Tienes alguna pregunta o comentario? ¡Usemos la voz!</p>
+      <Brand />
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>

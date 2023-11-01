@@ -1,15 +1,13 @@
 import "./App.css"
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer";
-import ItemDetail from "./components/ItemDetail";
 import NavBar from "./components/NavBar";
 import Logo from "./components/Logo"
 import Loader from "./components/Loader";
 import CartContainer from "./components/CartContainer";
 import Contact from "./components/Contact";
 import CategoryItems from "./components/CategoryItems";
-
-
+import ItemDetail from "./components/ItemDetail";
 
 //navBar desde abajo con rutas react router dom y llas rutas pedidass
 
