@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
-//import { mockItems } from "./mockItems.js";
 import Loader from './Loader';
 import { getFirestore, getDocs, collection } from 'firebase/firestore';
 
-//se crea ItemListContainer para mostra listado
+//se crea ItemListContainer para mostra listado yse conecta con firebase
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -12,8 +11,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setTimeout(() => {
-    
-    //setItems(mo);
+  
     const dataBase = getFirestore();
 
     const itemsCollection = collection( dataBase, 'items' )
@@ -29,7 +27,7 @@ const ItemListContainer = () => {
 
     });
     setLoading(false);
-    }, 1000);
+    }, 3000);
 },[]);
 
   return (

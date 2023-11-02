@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
-//se agrega metodo "navigate" y se agrega un pusheo para el carrito al finalizar la compra pero aun sin funcionar
+//se cambia la logica completa de ItemDetail
 
-const ItemDetail = () => {
-
+const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
   const [showItemCount, setShowItemCount] = useState(true);
   const [selectedItemCount, setSelectedItemCount] = useState(0);
@@ -13,21 +12,27 @@ const ItemDetail = () => {
   const handleAddToCart = (count) => {
     setSelectedItemCount(count);
     setShowItemCount(false);
-    
   };
 
   const handleFinishPurchase = () => {
-    navigate('/cart'); 
+    navigate('/cart');
   };
 
   return (
     <div className="item-detail">
       {showItemCount ? (
-        <ItemCount stock={1000} initial={1} onAdd={handleAddToCart} />
+        <div>
+          <h2>{item.title}</h2>
+          <p>Price: ${item.price}</p>
+          <p>Description: {item.description}</p>
+          <p>Category: {item.category}</p>
+          <img src={item.imageUrl} alt={item.title} />
+          <ItemCount stock={1000} initial={1} onAdd={handleAddToCart} />
+        </div>
       ) : (
         <div>
-          <h2>Genial! Haz seleccionado {selectedItemCount} ítem(s).</h2>
-          <button className='buy-btn' onClick={handleFinishPurchase}>Terminar mi compra</button>
+          <h2>¡Genial! Has seleccionado {selectedItemCount} artículo(s).</h2>
+          <button className="buy-btn" onClick={handleFinishPurchase}>Finalizar la compra</button>
         </div>
       )}
     </div>
@@ -35,4 +40,5 @@ const ItemDetail = () => {
 };
 
 export default ItemDetail;
+
 

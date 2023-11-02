@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getFirestore, getDocs, collection } from 'firebase/firestore';
+import ItemDetail from './ItemDetail';
 
 
 function ItemBase() {
@@ -28,7 +29,7 @@ function ItemBase() {
  return ( 
     <>
       <h1> Lista de Servicios </h1>
-      {JSON.stringify(items)}
+      <ItemDetail {...items}/>
     </>
  );
 }

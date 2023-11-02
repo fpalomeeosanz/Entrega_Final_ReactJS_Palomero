@@ -1,65 +1,42 @@
-import { useState, useEffect } from 'react'; 
-import Item from './Item';
+import { useState, useEffect } from 'react';
 import Loader from './Loader';
 import { useParams } from 'react-router-dom';
-import { getFirestore, getDocs, collection, where } from 'firebase/firestore';
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore'; 
+import ItemDetail from './ItemDetail';
+
+// se cambia la logica para almacenar un solo articulo no una lista, y se incluyen  los datos del artículo al componente ItemDetail la variable "q" para la consulta
 
 
-//se importa la promesa simulada y se cera stado para almacenar el elemento, se carga el Loader y se inserta y se carga el componente ItemCount y pasa addToCart como prop
-
-const ItemDetailContainer = () => { 
-
-  const { id } = useParams( ); 
-  const [item, setItem] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [items,setItems] = useState ([]);
-  const dataBase = getFirestore();
-    const fullCollection = collection(dataBase, 'items');
-    const field = "id";
-    const logical = "==";
-    const params = useParams();
-    const itemsCollection = where(
-       fullCollection,
-       field, 
-       logical, 
-       params.id);
-       getDocs(itemsCollection).then((snapshot) => {
-      if (!snapshot.empty){
-       setItems(snapshot.docs.map(doc =>{
-            return {
-                id: doc.id,
-                ...doc.data()
-            }
-        }))
-       }
-
-    });
-
+const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
 
   useEffect(() => {
-    const selectedItem = items[0]; 
+    const fetchData = async () => {
+      const dataBase = getFirestore();
+      const itemsCollection = collection(dataBase, 'items');
+      const q = query(itemsCollection, where('id', '==', id));
 
-    if (selectedItem) {
-      setItem(selectedItem);
-      setLoading(false);
-    } else {
-      setLoading(false);
-    }
-  }, [id,items]);
+      try {
+        const snapshot = await getDocs(q);
+        if (snapshot.exists) {
+          const itemData = snapshot.docs[0].data();
+          setItem(itemData);
+        }
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      }
+    };
+
+    fetchData();
+  }, [id]);
 
   return (
     <div className="item-detail-container">
-      {loading ? (
-        <Loader />
-      ) : item ? (
-        <div>
-          <Item item={item} imageUrl={item.imageUrl} />
-        </div>
-      ) : (
-        <p>No encuentras lo que buscas, escríbenos!.</p>
-      )}
+      {item ? <ItemDetail item={item} /> : <p>No encuentras lo que buscas, escríbenos.</p>}
+      <Loader />
     </div>
   );
 };
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

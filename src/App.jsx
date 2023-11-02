@@ -7,7 +7,7 @@ import Loader from "./components/Loader";
 import CartContainer from "./components/CartContainer";
 import Contact from "./components/Contact";
 import CategoryItems from "./components/CategoryItems";
-import ItemDetail from "./components/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 //navBar desde abajo con rutas react router dom y llas rutas pedidass
 
@@ -22,7 +22,7 @@ function App() {
       <Route path="*" element={<h1>404! Escribenos si buscas algo y no lo encuentras</h1>}></Route>
       <Route path="/category/:categoryId" element={<CategoryItems />}></Route>
       <Route exact path="/category/contact" element={<Contact />}></Route>
-      <Route exact path="/item/:id" element={<ItemDetail />}></Route>
+      <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
       <Route exact path="/cart" element={<CartContainer />}></Route>
     </Routes>
     </BrowserRouter>
