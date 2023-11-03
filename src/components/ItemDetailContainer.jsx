@@ -4,12 +4,13 @@ import { useParams } from 'react-router-dom';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore'; 
 import ItemDetail from './ItemDetail';
 
-// se cambia la logica para almacenar un solo articulo no una lista, y se incluyen  los datos del artículo al componente ItemDetail la variable "q" para la consulta
 
+//pruebas y cambios en logica y captura em promesa
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,15 +18,21 @@ const ItemDetailContainer = () => {
       const itemsCollection = collection(dataBase, 'items');
       const q = query(itemsCollection, where('id', '==', id));
 
-      try {
-        const snapshot = await getDocs(q);
-        if (snapshot.exists) {
-          const itemData = snapshot.docs[0].data();
-          setItem(itemData);
-        }
-      } catch (error) {
-        console.error('Error al obtener datos:', error);
-      }
+      getDocs(q)
+        .then((snapshot) => {
+          if (snapshot.exists) {
+            const itemData = snapshot.docs[0].data();
+            setItem(itemData);
+          } else {
+            console.error('No se encontraron datos para el ID proporcionado.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error al obtener datos:', error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     };
 
     fetchData();
@@ -33,10 +40,17 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="item-detail-container">
-      {item ? <ItemDetail item={item} /> : <p>No encuentras lo que buscas, escríbenos.</p>}
-      <Loader />
+      {loading ? (
+        <Loader />
+      ) : item ? (
+        <ItemDetail item={item} />
+      ) : (
+        <p>No encuentras lo que buscas, escríbenos.</p>
+      )}
     </div>
   );
 };
 
 export default ItemDetailContainer;
+
+

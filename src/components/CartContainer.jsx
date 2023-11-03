@@ -4,6 +4,8 @@ import ItemDetailContainer from './ItemDetailContainer';
 import CartIcon from './CartIcon';
 import Brand from './Brand';
 import ItemDetail from './ItemDetail';
+import ItemCount from './ItemCount';
+
 
 
 //cambios de logica filtrado para ver si existen elementos y dar una descripcion y numero de elemetos en el carrito
@@ -26,13 +28,15 @@ function CartContainer() {
   };
 
   return (
-    <div className="bg-info rounded p-3 position-relative">
+    <div className="bg-info rounded p-5 position-relative">
       <Brand />
       <CartIcon />
       <CartItems cart={cart} />
+      <ItemCount />
       <p>Total del carrito: {cartCount}</p>
       <ItemDetailContainer addToCart={addToCart} />
-      <ItemDetail  />
+      <ItemDetail />
+
     </div>
   );
 }
