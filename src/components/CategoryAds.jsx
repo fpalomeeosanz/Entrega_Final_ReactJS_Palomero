@@ -2,6 +2,7 @@ import Loader from './Loader';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 
+
 function CategoryAds() {
   const [adsItems, setAdsItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,8 +36,8 @@ function CategoryAds() {
         <Loader />
       ) : adsItems.length > 0 ? (
         <ul>
-          {adsItems.map((item) => (
-            <li key={item.id}>{item.name}</li>
+          {adsItems.map((item) => ( 
+            <li key={item.id}>{item.title + ": " + item.description}</li>
           ))}
         </ul>
       ) : (

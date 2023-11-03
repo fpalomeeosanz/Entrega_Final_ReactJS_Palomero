@@ -36,7 +36,7 @@ function CategoryWeb() {
       ) : webItems.length > 0 ? (
         <ul>
           {webItems.map((item) => (
-            <li key={item.id}>{item.name}</li>
+            <li key={item.id}>{item.title + ": " + item.description}</li>
           ))}
         </ul>
       ) : (
