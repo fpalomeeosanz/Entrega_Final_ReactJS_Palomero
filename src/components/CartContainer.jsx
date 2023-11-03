@@ -4,18 +4,12 @@ import ItemDetailContainer from './ItemDetailContainer';
 import CartIcon from './CartIcon';
 import Brand from './Brand';
 import ItemDetail from './ItemDetail';
-import ItemCount from './ItemCount';
 
-
-
-//cambios de logica filtrado para ver si existen elementos y dar una descripcion y numero de elemetos en el carrito
-
-function CartContainer() {
+function CartContainer(item) {
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
 
   const addToCart = (item, count) => {
-
     const existingItem = cart.find((cartItem) => cartItem.item.id === item.id);
 
     if (existingItem) {
@@ -29,16 +23,15 @@ function CartContainer() {
 
   return (
     <div className="bg-info rounded p-5 position-relative">
-      <Brand />
+      <Brand style={{}} />
       <CartIcon />
       <CartItems cart={cart} />
-      <ItemCount />
       <p>Total del carrito: {cartCount}</p>
       <ItemDetailContainer addToCart={addToCart} />
-      <ItemDetail />
-
+      <ItemDetail item={item} />
     </div>
   );
 }
 
 export default CartContainer;
+

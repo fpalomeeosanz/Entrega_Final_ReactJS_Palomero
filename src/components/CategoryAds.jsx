@@ -37,7 +37,7 @@ function CategoryAds() {
       ) : adsItems.length > 0 ? (
         <ul>
           {adsItems.map((item) => ( 
-            <li key={item.id}>{item.title + ": " + item.description}</li>
+            <li className = "category-style" key={item.id}>{item.title + ": " + item.description}</li>
           ))}
         </ul>
       ) : (

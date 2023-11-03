@@ -273,9 +273,12 @@ span {
   background-color: #a6ff00;
   border-radius: 25px;
   padding: 20px;
-  font-weight: bold;
-  color: #007bff;
+  font-weight: bolder;
+  color: #ffffff;
   font-size: 16px;
+}
+.category-style{
+  color: #333
 }
 
 

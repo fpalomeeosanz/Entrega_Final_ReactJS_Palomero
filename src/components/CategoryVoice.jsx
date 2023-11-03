@@ -36,7 +36,7 @@ function CategoryVoice() {
       ) : voiceItems.length > 0 ? (
         <ul>
           {voiceItems.map((item) => (
-            <li key={item.id}>{item.title + ": " + item.description}</li>
+            <li className = "category-style" key={item.id}>{item.title + ": " + item.description}</li>
           ))}
         </ul>
       ) : (

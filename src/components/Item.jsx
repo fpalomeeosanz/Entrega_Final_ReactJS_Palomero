@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from "./ItemCount";
 
@@ -14,7 +14,7 @@ const Item = ({ item, imageUrl }) => {
 
     console.log(`${count} elementos de "${item.title}" se han agregado al carrito.`);
   };
-
+  
   return (
     <div className="item">
       {imageUrl && imageUrl.trim() !== '' ? (

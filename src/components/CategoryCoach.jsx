@@ -36,7 +36,7 @@ function CategoryCoach() {
       ) : coachItems.length > 0 ? (
         <ul>
           {coachItems.map((item) => (
-            <li key={item.id}>{item.title + ": " + item.description}</li>
+            <li className = "category-style" key={item.id}>{item.title + ": " + item.description}</li>
           ))}
         </ul>
       ) : (

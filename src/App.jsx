@@ -6,7 +6,6 @@ import Logo from "./components/Logo"
 import Loader from "./components/Loader";
 import CartContainer from "./components/CartContainer";
 import Contact from "./components/Contact";
-import CategoryItems from "./components/CategoryItems";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import CategoryAds from "./components/CategoryAds";
 import CategoryVoice from "./components/CategoryVoice";
@@ -24,13 +23,12 @@ function App() {
     <Routes>
       <Route exact path="/" element={<ItemListContainer />}></Route>
       <Route path="*" element={<h1>404! Escribenos si buscas algo y no lo encuentras</h1>}></Route>
-      <Route path="/category/:categoryId" element={<CategoryItems />}></Route>
       <Route exact path="/category/contact" element={<Contact />}></Route>
       <Route exact path="/category/Ads" element={<CategoryAds />}></Route>
       <Route exact path="/category/Voice" element={<CategoryVoice />}></Route>
       <Route exact path="/category/Web" element={<CategoryWeb />}></Route>
       <Route exact path="/category/Coach" element={<CategoryCoach />}></Route>
-      <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
+      <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
       <Route exact path="/cart" element={<CartContainer />}></Route>
     </Routes>
     </BrowserRouter>
