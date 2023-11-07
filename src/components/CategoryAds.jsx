@@ -1,6 +1,7 @@
 import Loader from './Loader';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 
 
 function CategoryAds() {
@@ -35,11 +36,14 @@ function CategoryAds() {
       {loading ? (
         <Loader />
       ) : adsItems.length > 0 ? (
-        <ul>
+         <div>
           {adsItems.map((item) => ( 
             <li className = "category-style" key={item.id}>{item.title + ": " + item.description}</li>
           ))}
-        </ul>
+          <Link className='contact-link' to={`/category/contact`}>
+        <p>No encuentras lo que buscas, escríbenos.</p>
+        </Link>
+        </div>
       ) : (
         <p>No se encontraron ítems en esta categoría.</p>
       )}

@@ -28,7 +28,7 @@ function App() {
       <Route exact path="/category/Voice" element={<CategoryVoice />}></Route>
       <Route exact path="/category/Web" element={<CategoryWeb />}></Route>
       <Route exact path="/category/Coach" element={<CategoryCoach />}></Route>
-      <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
+      <Route exact path="/item/:itemId" element={<ItemDetailContainer />}></Route>
       <Route exact path="/cart" element={<CartContainer />}></Route>
     </Routes>
     </BrowserRouter>
