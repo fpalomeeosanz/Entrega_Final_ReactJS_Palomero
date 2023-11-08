@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Loader from "./Loader";
 import { useParams, Link } from "react-router-dom";
 import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
-import ItemListContainer from "./ItemListContainer"
+import ItemDetail from "./ItemDetail";
 
 
 const ItemDetailContainer = () => {
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
 
         if (snapshot.size > 0) {
           const itemData = snapshot.docs[0].data();
-          setItem(itemData);
+          setItem(...itemData);
         } else {
           setItem({
             id: itemId,
@@ -50,7 +50,7 @@ const ItemDetailContainer = () => {
       {loading ? (
         <Loader />
       ) : item ? (
-        <ItemListContainer key={item.id} item={item} imageUrl={item.imageUrl} price={item.price} title={item.title} description={item.description} />
+        <ItemDetail key={item.id} item={item} />
       ) : (
         <Link className="contact-link" to={`/category/contact`}>
           <p>No encuentras lo que buscas, escríbenos.</p>

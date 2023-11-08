@@ -11,6 +11,7 @@ import CategoryAds from "./components/CategoryAds";
 import CategoryVoice from "./components/CategoryVoice";
 import CategoryWeb from "./components/CategoryWeb";
 import CategoryCoach from "./components/CategoryCoach";
+import Seo from "./components/Seo"
 
 //navBar desde abajo con rutas react router dom y llas rutas pedidass
 
@@ -29,6 +30,7 @@ function App() {
       <Route exact path="/category/Web" element={<CategoryWeb />}></Route>
       <Route exact path="/category/Coach" element={<CategoryCoach />}></Route>
       <Route exact path="/item/:itemId" element={<ItemDetailContainer />}></Route>
+      <Route exact path="/7rbyS9u2xORkXlDuy6px" element={<Seo/>}></Route>
       <Route exact path="/cart" element={<CartContainer />}></Route>
     </Routes>
     </BrowserRouter>

@@ -21,7 +21,7 @@ function ItemDetail({ item }) {
     <div className="item-detail">
       {showItemCount ? (
         <div>
-          <h2>{item.title}</h2>
+          <h2>Details: {item.title}</h2>
           <p>Price: ${item.price}</p>
           <p>Description: {item.description}</p>
           <p>Category: {item.category}</p>

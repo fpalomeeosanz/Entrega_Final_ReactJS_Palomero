@@ -11,7 +11,6 @@ const Item = ({ item, imageUrl }) => {
     const updatedCartItems = [...cartItems];
     updatedCartItems.push({ ...item, quantity: count });
     setCartItems(updatedCartItems);
-
     console.log(`${count} elementos de "${item.title}" se han agregado al carrito.`);
   };
   
